@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Neon Tetris</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">▦</span>
+        <div>
+          <h1>NEON TETRIS</h1>
+          <p>CLASSIC ARCADE • MODERN EDITION</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">🔊</button>
+        <button id="pauseBtn" class="icon-btn" aria-label="Pause game">Ⅱ</button>
+      </div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="side-panel left-panel">
+        <div class="card hold-card">
+          <div class="card-title">HOLD <span>C</span></div>
+          <div id="holdPreview" class="preview hold-preview"></div>
+        </div>
+        <div class="card stats-card">
+          <div class="stat"><span>SCORE</span><strong id="score">0</strong></div>
+          <div class="stat"><span>HIGH SCORE</span><strong id="highScore">0</strong></div>
+          <div class="stat"><span>LEVEL</span><strong id="level">1</strong></div>
+          <div class="stat"><span>LINES</span><strong id="lines">0</strong></div>
+          <div class="stat"><span>COMBO</span><strong id="combo">—</strong></div>
+        </div>
+      </aside>
+
+      <section class="board-wrap">
+        <div class="board-shell">
+          <canvas id="gameCanvas" width="300" height="600" aria-label="Tetris game board"></canvas>
+          <div id="statusOverlay" class="overlay visible">
+            <div class="overlay-panel">
+              <div class="logo-tetris">TETRIS</div>
+              <h2 id="overlayTitle">READY?</h2>
+              <p id="overlayText">Stack blocks, clear lines, chase the high score.</p>
+              <button id="startBtn" class="primary-btn">START GAME</button>
+              <div class="key-hint">SPACE • HARD DROP &nbsp; C • HOLD &nbsp; P • PAUSE</div>
+            </div>
+          </div>
+          <div id="flashText" class="flash-text"></div>
+        </div>
+      </section>
+
+      <aside class="side-panel right-panel">
+        <div class="card next-card">
+          <div class="card-title">NEXT <span>5</span></div>
+          <div id="nextPreview" class="next-list"></div>
+        </div>
+        <div class="card controls-card desktop-controls">
+          <div class="card-title">CONTROLS</div>
+          <div class="control-row"><kbd>←</kbd><span>MOVE</span><kbd>→</kbd></div>
+          <div class="control-row"><kbd>↓</kbd><span>SOFT DROP</span></div>
+          <div class="control-row"><kbd>↑</kbd><span>ROTATE</span></div>
+          <div class="control-row"><kbd>Z</kbd><span>ROTATE CCW</span></div>
+          <div class="control-row"><kbd>SPACE</kbd><span>HARD DROP</span></div>
+          <div class="control-row"><kbd>C</kbd><span>HOLD</span></div>
+          <div class="control-row"><kbd>P</kbd><span>PAUSE</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="mobile-controls" aria-label="Touch controls">
+      <button data-control="left">←</button>
+      <button data-control="right">→</button>
+      <button data-control="down">↓</button>
+      <button data-control="rotate">↻</button>
+      <button data-control="drop">DROP</button>
+      <button data-control="hold">HOLD</button>
+      <button data-control="pause">Ⅱ</button>
+    </section>
+
+    <footer>
+      <span>7-BAG • GHOST PIECE • T-SPINS • COMBOS</span>
+      <button id="restartBtn" class="text-btn">RESTART <b>R</b></button>
+    </footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
